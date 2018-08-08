@@ -1,0 +1,10 @@
+.mainWelcome {
+    top: 117px;
+    width: 431px;
+    height: 194px;
+    border: solid cadetblue;
+    margin: 0 auto;
+    box-shadow: 10px 5px 5px #7fb7b8;
+    position: relative;
+        text-align: center;
+}
