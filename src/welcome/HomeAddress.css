@@ -1,0 +1,10 @@
+.back{
+  position: relative;
+  width: 46px;
+  height: 19px;
+  left: 9px;
+  top: 7px;
+  background-color: cadetblue;
+  border-radius: 9px;
+  cursor: pointer;
+}

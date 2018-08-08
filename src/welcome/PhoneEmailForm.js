@@ -16,6 +16,7 @@ export default class PhoneEmailForm extends Component {
   handleSubmit(e) {
     console.log('HANDLE SUBMIT!', e);
     e.preventDefault();
+    this.props.toggleView('homeAddress')
   }
 
   handleChangeEmail(e) {
