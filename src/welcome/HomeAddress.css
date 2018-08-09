@@ -8,3 +8,57 @@
   border-radius: 9px;
   cursor: pointer;
 }
+
+.suggestionMenu{
+  border: solid 1px grey;
+  z-index: 300;
+}
+
+.isHighlighted{
+  background-color: #aad8d9;
+  border-top: solid grey 1px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.item{
+  background-color: #f2efef;
+  border-top: solid grey 1px;
+  padding: 5px;
+}
+
+.test{
+  background-color: red;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.addressHeader{
+  margin-top: 5px;
+}
+
+/*TODO:  Just export one btn in other components 
+- vs. recreate in each one*/
+.submitBtn {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 43px;
+  width: 113px;
+  height: 34px;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0.3em 1.2em;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  color: #FFFFFF;
+  background-color: #4eb5f1;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer !important;
+  z-index: 500;
+}

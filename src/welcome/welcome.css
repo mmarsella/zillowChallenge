@@ -8,3 +8,14 @@
     position: relative;
     text-align: center;
 }
+
+.homeAddressMode{
+  top: 61px;
+  width: 431px;
+  height: 319px;
+  border: solid cadetblue;
+  margin: 0 auto;
+  box-shadow: 10px 5px 5px #7fb7b8;
+  position: relative;
+  text-align: center;
+}

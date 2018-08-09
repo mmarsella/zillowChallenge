@@ -3,6 +3,8 @@ import  React, { Component } from "react";
 import  style from './welcome.css';
 import  PhoneEmailForm from './PhoneEmailForm'
 import  HomeAddress from './HomeAddress'
+import classnames from 'classnames';
+
 
 
 function ViewChooser(props) {
@@ -30,7 +32,11 @@ export default class Welcome extends Component {
 
   render(){
     return(
-      <div className={style.mainWelcome}>
+      <div className={classnames({
+        [style.mainWelcome]: this.state.view === "phoneEmailForm",
+        [style.homeAddressMode]: this.state.view === "homeAddress"
+      })} 
+      >
         <ViewChooser
           view={this.state.view}
           phoneEmailForm={
