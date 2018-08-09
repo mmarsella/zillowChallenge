@@ -13,7 +13,10 @@ export default class ZillowResults extends Component {
   render(){
     return(
       <div>
-        ZILLOW RESULTS: {this.props.user.address}
+
+        <h3> RESULTS </h3> 
+        <span>Address: {this.props.user.address}</span>
+        <span>Zestimate: {this.props.user.zestimate}</span>
       </div>
     )
   }

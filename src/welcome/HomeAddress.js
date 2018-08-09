@@ -1,20 +1,16 @@
-// Form for Home Address
 import  React, { Component } from "react";
 import  style from './HomeAddress.css';
-import Autocomplete from 'react-autocomplete'
-import classnames from 'classnames';
-
+import  Autocomplete from 'react-autocomplete'
+import  classnames from 'classnames';
 
 export default class HomeAddress extends Component {
   constructor(props){
     super(props);
-
     this.state = {suggestions: [], hidden: true};
     this.handleSubmit = this.handleSubmit.bind(this); 
     this.handleBackClick = this.handleBackClick.bind(this);
-    // this.handleKeyUp = this.handleKeyUp.bind(this);
     this.fetchMapData = this.fetchMapData.bind(this);
-    this.timerId = null;
+    this.timerId = null; // for clearing setTimeouts per input change
   }
 
   handleSubmit(e) {
@@ -29,11 +25,7 @@ export default class HomeAddress extends Component {
     this.props.toggleView('phoneEmailForm')
   }
 
-  handleInput(e) {
-    this.setState({phone: e.target.value});
-    console.log('HANDLE Change!', e);
-  }
-
+  // TODO:  Read API key from webpack
   fetchMapData(input){
     fetch(`http://apilayer.net/api/autocomplete?access_key=a27fff978a028f63197705eeef0b6ba6&text=${input}&country_code=USA`) 
     .then((resp) => resp.json())
@@ -57,7 +49,6 @@ export default class HomeAddress extends Component {
     .catch(function(err) {
         console.log('ERRROR', err)
     });
-
   }
 
   render() {
@@ -103,35 +94,28 @@ export default class HomeAddress extends Component {
               }, 1000)
             }}
             renderMenu={children => {
-                // console.log('renderMenu', children)
-                return (
-                  <div
-                    className={style.suggestionMenu}
-                  >
-                    {children}
-                  </div>
-                )
-              } 
+              return (
+                <div className={style.suggestionMenu}>
+                  {children}
+                </div>
+              )} 
             }
             renderItem={(item, isHighlighted, styles={color:'red'}) => {
-                // console.log('item, isHighlighted', item, isHighlighted)
-                return (
-                  <div
-                    className={`${isHighlighted ? style.isHighlighted : style.item}`}
-                    key={item}
-                  >
-                    {item}
-                  </div>
-                )
-              }
-            }
+              return (
+                <div
+                  className={`${isHighlighted ? style.isHighlighted : style.item}`}
+                  key={item}
+                >
+                  {item}
+                </div>
+              )
+            }}
           />
           <input 
             className={classnames({
               [style.submitBtn]: true,
               [style.hidden]: this.state.hidden
             })} 
-
             type="submit" value="Submit" 
           />
         </form>

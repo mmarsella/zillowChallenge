@@ -19,6 +19,7 @@ export default class Welcome extends Component {
     super(props);
     this.toggleView = this.toggleView.bind(this); 
     this.getHomeAddress = this.getHomeAddress.bind(this);
+    this.getZestimate = this.getZestimate.bind(this);
     // initial state w/o signed in
     this.state = {
       view:'homeAddress', // phoneEmailForm
@@ -44,6 +45,21 @@ export default class Welcome extends Component {
       user.address = address;
       this.setState({user})
     }
+
+    this.getZestimate();
+  }
+
+  getZestimate(){
+    // ideally would make a call like this:
+    // http://www.zillow.com/webservice/GetSearchResults.htm?detailsHere...
+    // However - streetLayer doesn't return full addresses - which will always result in an error
+    // on the zillow API.  So I'm going to push fake data here.
+    const max = 999999999;
+    const min = 100000000;
+    const zestimate = Math.floor(Math.random() * (max - min + 1)) + min;
+    let user = {...this.state.user}
+    user.zestimate = zestimate;
+    this.setState({user})
   }
 
   render(){
@@ -75,7 +91,6 @@ export default class Welcome extends Component {
              user={this.state.user}
            /> 
           }
-
         />
       </div>
     )
