@@ -62,7 +62,7 @@ export default class HomeAddress extends Component {
   render() {
     return (
       <div>
-        <div className={style.back} onClick={this.handleBackClick}>Back</div>
+        <i className={style.back} onClick={this.handleBackClick}></i>
         <h3 className={style.addressHeader}>Find your address</h3> 
         <span className={style.text}>You can submit once you select from the dropdown.</span>
         <form onSubmit={this.handleSubmit}>

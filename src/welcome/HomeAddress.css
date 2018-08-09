@@ -1,12 +1,13 @@
 .back{
-  position: relative;
-  width: 46px;
-  height: 19px;
-  left: 9px;
-  top: 7px;
-  background-color: cadetblue;
-  border-radius: 9px;
   cursor: pointer;
+  position: relative;
+  right: 191px;
+  top: 17px;
+  -webkit-transform: rotate(135deg);
+  border: solid cadetblue;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 5px;
 }
 
 .suggestionMenu{
