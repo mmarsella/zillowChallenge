@@ -20,7 +20,8 @@ export default class HomeAddress extends Component {
   handleSubmit(e) {
     console.log('HANDLE SUBMIT!', e);
     e.preventDefault();
-    // this.props.toggleView('homeAddress')
+    this.props.homeAddress(this.state.value);    
+    this.props.toggleView('zillowResults')
   }
 
   handleBackClick(e) {
