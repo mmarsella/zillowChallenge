@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "react": "^16.4.2",
+    "react-autocomplete": "^1.8.1",
     "react-dom": "^16.4.2"
   }
 }

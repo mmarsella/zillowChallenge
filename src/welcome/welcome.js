@@ -19,7 +19,7 @@ export default class Welcome extends Component {
     super(props);
     this.toggleView = this.toggleView.bind(this); 
     // initial state w/o signed in
-    this.state = {view:'phoneEmailForm'}
+    this.state = {view:'homeAddress'} // phoneEmailForm
   }
 
 
